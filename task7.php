@@ -5,27 +5,26 @@
 
     <script>
         window.addEventListener("load", function () {
-            var button = document.getElementById("button");
-            button.addEventListener("click", function () {
-                var yearFromUser = +(document.getElementById("year").value);
-                var resultYear = document.getElementById("resultYear");
-                if (Number.isInteger(yearFromUser) && yearFromUser > 0 && yearFromUser <= 9999) {
-                    if (Number.isInteger(yearFromUser / 400)) {
-                        resultYear.innerHTML = "Год високосный";
-                    } else if (Number.isInteger(yearFromUser / 100)) {
-                        resultYear.innerHTML = "Год невисокосный";
-                    } else if (Number.isInteger(yearFromUser / 4)) {
-                        resultYear.innerHTML = "Год високосный";
+                var button = document.getElementById("button");
+                button.addEventListener("click", function () {
+                    var yearFromUser = +(document.getElementById("year").value);
+                    var resultYear = document.getElementById("resultYear");
+                    if (Number.isInteger(yearFromUser) && yearFromUser > 0 && yearFromUser <= 9999) {
+                        if (Number.isInteger(yearFromUser / 400)) {
+                            resultYear.innerHTML = "Год високосный";
+                        } else if (Number.isInteger(yearFromUser / 100)) {
+                            resultYear.innerHTML = "Год невисокосный";
+                        } else if (Number.isInteger(yearFromUser / 4)) {
+                            resultYear.innerHTML = "Год високосный";
+                        } else {
+                            resultYear.innerHTML = "Год невисокосный";
+                        }
                     } else {
-                        resultYear.innerHTML = "Год невисокосный";
+                        resultYear.innerHTML = "Введите год от 1 до 9999";
                     }
-                }
-            } else {
-                resultYear.innerHTML = "Введите год от 1 до 9999";
-            }
-        }, false);
-        },
-        false
+                }, false);
+            },
+            false
         )
         ;
     </script>

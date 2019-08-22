@@ -40,12 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form name="form" action="" method="post">
         <p>Введите цифру:</p>
-        <input name="numeral" type="text" value="<?= $numeral ?>" placeholder="Введите цифру"/><br><br>
+        <input name="numeral" type="text" value="<?php if(isset($numeral)):?><?= $numeral ?> <?php endif?>" placeholder="Введите цифру"/><br><br>
         <p>Введите число:</p>
-        <input name="number" type="text" value="<?= $number ?>" placeholder="Введите число"/><br><br>
+        <input name="number" type="text" value="<?php if(isset($number)):?><?= $number ?> <?php endif?>" placeholder="Введите число"/><br><br>
         <input id="task1" type="submit" value="Результат"/><br>
         <p>Результат:</p>
-        <p><?= $result ?></p>
+        <p><?php if (isset($result)): ?><?= $result ?><?php endif ?></p>
     </form>
 </div>
 </body>

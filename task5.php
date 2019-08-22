@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input name="fio" type="text" value="" placeholder="Введите ФИО полностью"/><br><br>
         <input id="task5" type="submit" value="Результат"/><br>
         <p>Результат:</p>
-        <p><? print_r($result) ?></p>
+        <p><?php if (isset($result)): ?><?php print_r($result) ?><?php endif?></p>
     </form>
 </div>
 </body>

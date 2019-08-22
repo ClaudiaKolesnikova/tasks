@@ -42,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form name="form" action="" method="post">
         <p>Введите число:</p>
-        <input name="numberStart" type="text" value="<?= $startNumber ?>" placeholder="Введите число"/><br><br>
-        <input name="numberEnd" type="text" value="<?= $endNumber ?>" placeholder="Введите число"/><br><br>
+        <input name="numberStart" type="text" value="<?php if (isset($startNumber)): ?><?= $startNumber ?><?php endif ?>" placeholder="Введите число"/><br><br>
+        <input name="numberEnd" type="text" value="<?php if (isset($endNumber)): ?><?= $endNumber ?><?php endif ?>" placeholder="Введите число"/><br><br>
         <input id="task1" type="submit" value="Посчитать сумму"/><br>
         <p>Результат:</p>
-        <p><? print_r($result) ?></p>
+        <p><?php if (isset($result)): ?><?php print_r($result)?><?php endif ?></p>
     </form>
 </body>
 </html>

@@ -41,10 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form name="form" action="" method="post">
         <p>Введите число:</p>
-        <input name="number" type="text" value="<?= $numberFromUser ?>" placeholder="Введите число"/><br><br>
+        <input name="number" type="text" value="<?php if(isset($numberFromUser)):?><?= $numberFromUser ?> <?php endif?>" placeholder="Введите число"/><br><br>
         <input id="task1" type="submit" value="Посчитать сумму"/><br>
         <p>Результат:</p>
-        <input id="result" type="text" value="<?= $result ?>"/><br>
+        <input id="result" type="text" value="<?php if(isset($result)):?><?= $result ?> <?php endif?>"/><br>
     </form>
 </div>
 </body>
